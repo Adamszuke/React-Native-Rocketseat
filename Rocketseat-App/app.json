@@ -1,8 +1,8 @@
 {
   "expo": {
     "__comment":"configurações da aplicação como ícone, nome,etc",
-    "name": "Rocketseat-App",
-    "slug": "Rocketseat-App",
+    "name": "Rocketseat App",
+    "slug": "Rocketseat App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

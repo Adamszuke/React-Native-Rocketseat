@@ -2,6 +2,12 @@
 
 Expo is an open-source platform for making universal native apps for Android, iOS, and the web with JavaScript and React.
 
+## Run
+
+``` 
+npx expo start
+```
+
 
 ## Expo config
 

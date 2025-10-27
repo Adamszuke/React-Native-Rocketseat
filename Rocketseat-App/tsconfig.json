@@ -6,7 +6,8 @@
     "strict": true,
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
+        // Quando digitar "@/" vai aparecer todas as pastas dentro da pasta "src"
       ]
     }
   },
