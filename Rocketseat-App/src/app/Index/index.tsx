@@ -1,10 +1,12 @@
-import {View, Image, TouchableOpacity} from "react-native"
+import {View, Image, TouchableOpacity, FlatList} from "react-native"
 
 import {styles} from "./styles"
 import {MaterialIcons} from "@expo/vector-icons"
 import { colors } from "@/styles/colors"
 
-import { Category } from "@/components/category"
+import {Link} from "@/components/link"
+import { Categories } from "@/components/categories"
+
 
 export default function Index(){
     return(
@@ -19,8 +21,16 @@ export default function Index(){
                 </TouchableOpacity>
             </View>
 
-            <Category/>
+
+            <Categories/>
+            
+            <Link
+                name="Rockeseat"
+                url="https://app.rocketseat.com.br/"
+                onDetails={() => console.log("Clicou")}
+            />
         </View>
+
     )
 }
 
