@@ -1,14 +1,26 @@
-import { View, Image, TouchableOpacity, FlatList, Modal, Text } from "react-native";
+import { useState } from "react";
+import {
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  Modal,
+  Text,
+} from "react-native";
 
 import { styles } from "./styles";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "@/styles/colors";
 import { Option } from "@/components/options";
+import { router } from "expo-router";
+import { categories } from "@/utils/categories";
 
 import { Link } from "@/components/link";
 import { Categories } from "@/components/categories";
 
+
 export default function Index() {
+  const[category, setCategory] = useState(categories[0].name)
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -17,13 +29,13 @@ export default function Index() {
           style={styles.logo}
         ></Image>
 
-        <TouchableOpacity activeOpacity={0.1}>
+        <TouchableOpacity onPress={() => router.navigate("/add")}>
           {/* Controla a opacidade do botão ao ser clicado e a intensidade*/}
           <MaterialIcons name="add" size={32} color={colors.green[300]} />
         </TouchableOpacity>
       </View>
 
-      <Categories />
+      <Categories onChange={setCategory} selected={category}/>
 
       <FlatList
         data={["1", "2", "3"]}
@@ -40,7 +52,7 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
       />
 
-      <Modal transparent visible={true}>
+      <Modal transparent visible={false}>
         <View style={styles.modal}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
@@ -58,7 +70,7 @@ export default function Index() {
             <Text style={styles.modalUrl}>https://app.rocketseat.com.br/</Text>
 
             <View style={styles.modalFooter}>
-              <Option name="Excluir" icon="delete" variant="secondary"/>
+              <Option name="Excluir" icon="delete" variant="secondary" />
               <Option name="Abrir" icon="language" />
             </View>
           </View>
