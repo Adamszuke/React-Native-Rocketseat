@@ -7,7 +7,7 @@ import { colors } from "@/styles/colors"
 
 type Props = {
     name: String
-    url: string
+    url: String
     onDetails: () => void
 }
 
